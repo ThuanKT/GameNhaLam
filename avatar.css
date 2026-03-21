@@ -1,0 +1,152 @@
+@media(max-width:768px) {
+    /* 1. Sửa lỗi Header: Ngăn chặn đè lớp */
+    .giaodien0 {
+        padding: 8px 10px !important;
+        margin: 5px !important;
+        gap: 5px !important; /* Thu hẹp khoảng cách giữa các khối */
+    }
+
+    .left {
+        flex: 0 0 auto !important; /* Menu chỉ chiếm đủ diện tích của nó */
+    }
+
+    .center {
+        flex: 1 !important; /* Thanh tìm kiếm co giãn linh hoạt */
+        min-width: 0 !important; /* Quan trọng: Cho phép khối center thu nhỏ dưới mức nội dung */
+    }
+
+    .search-box {
+        padding: 6px 8px !important;
+        width: 100% !important;
+    }
+
+    .search-box input {
+        font-size: 12px !important;
+    }
+
+    .right {
+        flex: 0 0 auto !important; /* Nút đăng nhập chỉ chiếm đủ chỗ của nó */
+    }
+
+    /* 2. Sửa lỗi nút Đăng nhập bị méo */
+    .category.login-btn {
+        padding: 6px 10px !important;
+        font-size: 11px !important;
+        white-space: nowrap !important; /* Tuyệt đối không cho nhảy dòng */
+        min-width: max-content !important; /* Nút luôn đủ rộng cho chữ */
+        border-radius: 12px !important;
+    }
+
+    /* 3. Cấu trúc Card Game: Dồn đáy & Bỏ ngày phát hành */
+    .game-card, .motagame {
+        min-width: 160px !important;
+        height: auto !important;
+        min-height: 230px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important;
+        padding-bottom: 10px !important;
+    }
+
+    .card-header {
+        height: 110px !important; /* Giảm chiều cao ảnh để dồn chữ xuống */
+        margin-bottom: auto !important;
+    }
+
+    /* Ẩn các thành phần theo yêu cầu */
+    .release-date, .card-footer, .stars, .metrics {
+        display: none !important;
+    }
+
+    .game-title {
+        font-size: 14px !important;
+        margin: 5px 10px !important;
+        color: #fff !important;
+        white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+
+    /* Thể loại nằm sát đáy */
+    .tags {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        gap: 4px !important;
+        padding: 0 10px !important;
+        scrollbar-width: none;
+    }
+
+    .tags::-webkit-scrollbar { display: none; }
+
+    .tags span {
+        font-size: 9px !important;
+        padding: 2px 6px !important;
+        white-space: nowrap !important;
+        background: rgba(255, 255, 255, 0.1) !important; /* Nền trắng mờ */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    }
+}
+/* --- CẤU HÌNH CHO LAPTOP (Màn hình lớn) --- */
+
+/* ÉP 5 GAME TRÊN 1 HÀNG CHO LAPTOP */
+.game-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important; /* Chia đúng 5 cột đều nhau */
+    gap: 15px !important;               /* Khoảng cách giữa các ô */
+    padding: 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;   /* Đảm bảo padding không làm tràn khung */
+}
+
+.game-grid .game-item {
+    width: 100% !important;
+    min-width: 0 !important;             /* QUAN TRỌNG: Bỏ mọi giới hạn chiều rộng cũ */
+}
+
+.game-grid .game-card {
+    width: 100% !important;
+    min-width: 0 !important;             /* Bắt buộc card phải co lại theo ô Grid */
+    margin: 0 !important;                /* Bỏ margin thừa */
+}
+
+.game-grid .card-header img {
+    width: 100% !important;
+    object-fit: cover !important;        /* Ảnh tự co dãn để không làm vỡ khung */
+}
+
+/* --- CHẾ ĐỘ ĐIỆN THOẠI (Dưới 768px) --- */
+@media (max-width: 768px) {
+    .game-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; /* Chia đúng 3 cột đều nhau */
+        gap: 8px !important; /* Khoảng cách nhỏ giữa các card để đủ chỗ */
+        padding: 10px 5px !important;
+    }
+    /* 1. Thu nhỏ chiều cao tổng thể của Card */
+    .game-grid .game-card, .game-card, .motagame {
+        min-height: 140px !important; /* Giảm chiều cao tối thiểu xuống */
+        justify-content: flex-start !important; /* Đổi từ flex-end sang flex-start để chữ sát ảnh */
+        padding-bottom: 5px !important;
+    }
+
+    /* 2. Làm ngắn chiều cao khung ảnh (Banner) */
+    .game-grid .card-header, .card-header {
+        height: 70px !important; /* Giảm chiều cao ảnh để trông gọn hơn */
+        margin-bottom: 5px !important; /* Khoảng cách nhỏ giữa ảnh và tên game */
+    }
+
+    /* 3. Chỉnh lại lề cho tên game sát lên trên */
+    .game-grid .game-title, .game-title {
+        font-size: 13px !important;
+        margin: 2px 10px !important; /* Giảm margin để sát ảnh */
+        line-height: 1.2 !important;
+    }
+
+    /* 4. Thể loại (Tags) sát ngay dưới tên */
+    .game-grid .tags, .tags {
+        margin-top: 2px !important;
+        padding: 0 10px !important;
+    }
+}
