@@ -1,0 +1,15 @@
+       .login-btn {
+           text-decoration: none;
+           /* Bỏ gạch chân */
+           color: white;
+           font-weight: bold;
+           transition: all 0.3s ease;
+           /* Hiệu ứng mượt mà */
+           border: 1px solid transparent;
+           /* Tránh bị nhảy khung khi hiện border */
+       }
+
+       .login-btn:hover {
+           box-shadow: 0 0 15px #22c55e;
+           transform: translateY(-2px);
+       }

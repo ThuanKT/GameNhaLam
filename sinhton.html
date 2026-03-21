@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Store</title>
+    <link href="giaodien.css" rel="stylesheet">
+      <link href="danhmuc.css" rel="stylesheet">
+    <link href="logo.css" rel="stylesheet">
+    <link href="card.css" rel="stylesheet">
+    <link href="login.css" rel="stylesheet">
+    <link href="logo.css" rel="stylesheet">
+    <link href="pro.css" rel="stylesheet">
+    <link href="menu.css" rel="stylesheet">
+    <link href="searchbox.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@900&family=Russo+One&display=swap" rel="stylesheet">
+
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar">
+        <a href="index.html">🏠 Trang chủ</a>
+
+        <div class="submenu">
+            <a href="javascript:void(0)" class="submenu-btn" onclick="toggleSubmenu(event) ">🔥 Thể loại <span
+                    style="float:right">▾</span></a>
+            <div class="submenu-content" id="genreMenu">
+                <a href="hanhdong.html">• Hành động</a>
+                <a href="chienthuat.html">• Chiến thuật</a>
+                <a href="phieuluu.html">• Phiêu lưu</a>
+                <a href="sangtao.html">• Sáng tạo</a>
+                <a href="FPS.html">• FPS</a>
+                <a href="bansung.html">• Bắn súng</a>
+                <a href="sinhton.html">• Sinh tồn</a>
+                <a href="duaxe.html">• Đua xe</a>
+                <a href="nhapvai.html">• Nhập vai</a>
+            </div>
+        </div>
+
+
+        <a href="#">💬 Hỗ trợ</a>
+    </div>
+
+    <header>
+        <div class="giaodien0">
+            <div class="left">
+                <span class="menu-btn" onclick="toggleMenu(event)">☰</span>
+                <a href="index.html" class="logo-container ">
+                    <img src="logo_preview_rev_1.png" alt="Game Nhà Làm" class="header-logo">
+                    <div class="logo-text">
+                        <span class="logo-main">GAME</span>
+                        <span class="logo-sub">NHÀ LÀM</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="center">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Tìm trò chơi...">
+                </div>
+            </div>
+
+            <div class="right">
+                <a href="javascript:void(0)" class="category login-btn" id="loginBtn" onclick="mockLogin()">Đăng
+                    nhập</a>
+
+                <div class="user-profile" id="userProfile" style="display: none;">
+                    <img src="https://i.pravatar.cc/150?img=3" alt="User Avatar" class="user-avatar">
+                    <div class="user-dropdown">
+                        <a href="#">Trang cá nhân</a>
+                        <a href="#">Lịch sử mua</a>
+                        <a href="javascript:void(0)" onclick="mockLogout()" style="color: #ff4d4d;">Đăng xuất</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <div id="searchResult" class="gamelist"></div>
+    <div class="tieude hide-on-search">DANH SÁCH TRÒ CHƠI SINH TỒN</div>
+
+    <div class="game-grid">
+       <div class="game-item">
+            <a href="gfdg.html" class="game-card card-link">
+                <div class="card-header">
+                    <img src="IntotheDeadOurDarkestDays.jpg" alt="Game Banner">
+
+                </div>
+
+                <div class="card-body">
+                    <h2 class="game-title">Into the Dead: Our Darkest Day</h2>
+                    <p class="release-date">📅 Phát hành: 16/01/2025</p>
+                    <div class="tags">
+                        <span>Hành động</span>
+                        <span>Sinh tồn</span>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="metrics">
+                        <span>❤️ 131</span>
+                        <span>💬 132</span>
+                        <span>👁️ 597</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="game-item">
+            <a href="gfdg.html" class="game-card card-link">
+                <div class="card-header">
+                    <img src="rân.jpg" alt="Game Banner">
+
+                </div>
+
+                <div class="card-body">
+                    <h2 class="game-title">Ranger’s Path: National Park Simulator</h2>
+                    <p class="release-date">📅 Phát hành: 29/03/2025</p>
+                    <div class="tags">
+                        <span>Sinh tồn</span>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="metrics">
+                        <span>❤️ 351</span>
+                        <span>💬 125</span>
+                        <span>👁️ 599</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="game-item">
+            <a href="gfdg.html" class="game-card card-link">
+                <div class="card-header">
+                    <img src="mine.jpg" alt="Game Banner">
+
+                </div>
+
+                <div class="card-body">
+                    <h2 class="game-title">Minecraft</h2>
+                    <p class="release-date">📅 Phát hành: 16/03/2026</p>
+                    <div class="tags">
+                        <span>Sinh tồn</span>
+                        <span>Sáng tạo</span>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="metrics">
+                        <span>❤️ 1354</span>
+                        <span>💬 758</span>
+                        <span>👁️ 1523</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+    </div>
+    <script src="./menu.js"></script>
+    <script src="./tk.js"></script>
+</body>
+
+</html>
