@@ -1,0 +1,86 @@
+/* 1. ẨN CÁC PHẦN THỪA KHI SEARCH */
+.searching .slider,
+.searching .tieude:first-of-type,
+.searching .hide-on-search,
+.searching .tieude,
+.searching .banner,
+.searching .release-date,
+.searching .tags {
+    display: none !important;
+    /* Ẩn slider, tiêu đề, banner, ngày phát hành, tags... để giao diện gọn lại */
+}
+
+/* 2. THIẾT LẬP CARD GAME */
+.searching .game-card {
+    display: flex !important;          /* Dùng flex */
+    flex-direction: column !important; /* Xếp nội dung theo chiều dọc */
+    height: 100% !important;           
+    min-height: 200px; /* Đảm bảo card đủ cao để chứa nội dung */
+    background: #1e293b; /* Màu nền card */
+    border-radius: 8px;  /* Bo góc */
+    overflow: hidden;    /* Ẩn phần tràn ra ngoài */
+}
+
+/* 3. PHẦN THÂN (CHỨA TÊN GAME) */
+.searching .card-body {
+    display: flex !important;          /* Dùng flex */
+    flex-direction: column !important; /* Xếp theo chiều dọc */
+    flex-grow: 1 !important;           /* Chiếm hết khoảng trống còn lại → đẩy footer xuống */
+    padding: 8px 8px 4px 8px !important; /* Khoảng cách bên trong */
+}
+
+/* 3.1 TÊN GAME */
+.searching .game-title {
+    font-size: 0.85rem;   /* Kích thước chữ */
+    margin-bottom: 5px;   /* Khoảng cách dưới */
+
+    display: -webkit-box;        /* Dùng để giới hạn số dòng */
+    -webkit-line-clamp: 2;       /* Tối đa 2 dòng */
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;            /* Ẩn phần dư */
+    text-align: center;          /* Căn giữa chữ */
+}
+
+/* 4. CỤM DƯỚI (TAGS + FOOTER) */
+
+/* 4.1 TAGS */
+.searching .tags {
+    margin-top: auto !important;
+    /* Đẩy tags xuống sát đáy card (gần footer) */
+
+    padding-bottom: 5px !important;
+    /* Khoảng cách nhỏ phía dưới tags */
+}
+
+/* 4.2 TỪNG TAG */
+.searching .tags span {
+    font-size: 10px; /* Chữ nhỏ */
+    background: rgba(255, 255, 255, 0.1); /* Nền mờ */
+    padding: 2px 6px; /* Kích thước tag */
+    border-radius: 4px; /* Bo góc */
+    white-space: nowrap; /* Không xuống dòng */
+}
+
+/* 5. FOOTER (ĐƯỜNG KẺ + THÔNG SỐ) */
+.searching .card-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    /* Đường kẻ ngăn cách phía trên */
+
+    padding: 5px 8px !important;
+    /* Khoảng cách bên trong */
+
+    background: rgba(0, 0, 0, 0.2);
+    /* Nền tối nhẹ cho footer */
+}
+
+/* 5.1 METRICS (SỐ LIỆU) */
+.searching .metrics {
+    display: flex;                    
+    justify-content: space-between;  
+    /* Dàn đều nội dung sang 2 bên */
+
+    font-size: 10px;                 
+    color: #cbd5e1;                  
+    /* Màu chữ nhạt */
+}
