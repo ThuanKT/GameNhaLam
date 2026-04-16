@@ -1,0 +1,28 @@
+/* MOBILE */
+@media(max-width:768px){
+    
+    .game-card {
+        width: 60px;
+        height: 60px;
+    }
+    .info {
+        flex-direction: column;
+    }
+
+    .info-left {
+        text-align: center;
+    }
+
+    .game-logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .screenshots {
+        flex-direction: column;
+    }
+
+    .screenshots img {
+        width: 100%;
+    }
+}
