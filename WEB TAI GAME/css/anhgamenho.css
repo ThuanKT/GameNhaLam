@@ -1,0 +1,41 @@
+/* GAME CARD SMALL */
+
+        .games {
+            min-width: 160px;
+            border-radius: 20px;
+            padding: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .games img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 20px;
+        }
+
+        .games img:hover {
+            transition: 0.3s;
+            box-shadow: 0 0 10px #22c55e;
+            transform: translateY(-5px);
+        }
+        .gamelists {
+    display: flex; 
+    /* Xếp các game theo hàng ngang */
+
+    overflow-x: auto; 
+    /* Cho phép cuộn ngang */
+
+    padding: 20px; 
+    /* Khoảng cách trong */
+
+    -webkit-overflow-scrolling: touch; 
+    /* Vuốt mượt trên điện thoại (iOS) */
+}
+
+/* ===== ẨN THANH SCROLL ===== */
+.gamelists::-webkit-scrollbar {
+    display: none; 
+    /* Ẩn scrollbar (Chrome, Edge, Safari) */
+}
