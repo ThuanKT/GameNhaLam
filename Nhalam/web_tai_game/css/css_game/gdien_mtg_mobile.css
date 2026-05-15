@@ -1,0 +1,48 @@
+/* MOBILE */
+@media(max-width:768px){
+    
+    .game-card {
+        width: 60px;
+        height: 60px;
+    }
+    .info {
+        flex-direction: column;
+    }
+
+    .info-left {
+        text-align: center;
+    }
+
+    .game-badges {
+        justify-content: center;
+    }
+
+    .game-logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .screenshots {
+        flex-direction: column;
+    }
+
+    .screenshots img {
+        width: 100%;
+    }
+     .download-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .download-banner button {
+        width: 100%;
+    }
+
+    .download-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .info-right {
+        width: 100%;
+    }
+}
