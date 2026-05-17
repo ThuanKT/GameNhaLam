@@ -1,0 +1,174 @@
+/* ===== SIDEBAR (MENU BÊN TRÁI) ===== */
+.sidebar {
+    position: fixed; 
+    /* Cố định theo màn hình, không bị cuộn */
+
+    top: 0; 
+    /* Sát mép trên */
+
+    left: 0; 
+    /* Vị trí cố định */
+
+    width: 250px; 
+    /* Độ rộng sidebar */
+
+    height: 100%; 
+    /* Chiều cao full màn hình */
+
+    background: #020617; 
+    /* Nền tối */
+
+    padding: 20px; 
+    /* Khoảng cách trong */
+
+    transform: translateX(-100%);
+    /* Ẩn sidebar bằng cách dịch ra ngoài sang trái */
+
+    transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    /* Hiệu ứng trượt nhanh và mượt hơn */
+
+    z-index: 300; 
+    /* Nằm trên header (header là 100) và trên nội dung chính */
+}
+
+/* ===== LINK TRONG SIDEBAR ===== */
+.sidebar a {
+    display: block; 
+    /* Mỗi link 1 dòng */
+
+    color: white; 
+    /* Màu chữ */
+
+    padding: 12px; 
+    /* Tăng vùng click */
+
+    text-decoration: none; 
+    /* Bỏ gạch chân */
+
+    border-radius: 10px; 
+    /* Bo góc mềm */
+}
+
+/* ===== HOVER LINK ===== */
+.sidebar a:hover {
+    background: #1e293b; 
+    /* Nền sáng hơn khi hover */
+}
+
+/* ===== KHI MỞ SIDEBAR ===== */
+.sidebar.show {
+    transform: translateX(0); 
+    /* Trượt vào màn hình */
+}
+/* MENU CON */
+.submenu-content {
+    max-height: 0; 
+    /* Chiều cao = 0 → menu bị ẩn hoàn toàn */
+
+    overflow: hidden; 
+    /* Phần nội dung bên trong bị cắt, không bị tràn ra */
+
+    transition: max-height 0.4s ease-out; 
+    /* Khi thay đổi chiều cao → tạo hiệu ứng trượt mượt */
+
+    background: #0f172a; 
+    /* Màu nền menu con (khác menu cha cho dễ nhìn) */
+
+    border-radius: 10px; 
+    /* Bo góc cho đẹp */
+
+    margin-left: 10px; 
+    /* Đẩy menu con vào trong → nhìn giống cấp con */
+}
+
+
+/* KHI MỞ MENU */
+.submenu-content.open {
+    max-height: 400px; 
+    /* Tăng chiều cao → menu hiện ra (trượt xuống) */
+    /* Nếu menu dài hơn 400px → sẽ bị cắt */
+}
+
+
+/* LINK TRONG MENU CON */
+.submenu-content a {
+    font-size: 14px; 
+    /* Chữ nhỏ hơn menu chính */
+
+    padding: 8px 20px !important; 
+    /* Khoảng cách bên trong, 20px bên trái → thụt vào */
+
+    color: white !important; 
+    /* Ép màu trắng, tránh bị CSS khác ghi đè */
+}
+
+
+/* KHỐI CHỨA LOGO */
+.top-logo-section {
+    display: flex; 
+    /* Bật flexbox để dễ căn chỉnh */
+
+    justify-content: center; 
+    /* Căn logo ra giữa theo chiều ngang */
+
+    padding: 20px 0 10px 0; 
+    /* Tạo khoảng cách trên (20px) và dưới (10px) */
+
+    background: transparent; 
+    /* Nền trong suốt (không màu) */
+}
+        .menu-btn {
+            font-size: 24px;
+            color: #22c55e;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .menu-btn:hover {
+            color: white;
+            /* Đổi màu chữ sang trắng cho nổi */
+            background: rgba(34, 197, 94, 0.2);
+            /* Nền xanh nhạt */
+            text-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
+            /* Phát sáng chữ */
+        }
+
+/* ===== MAIN CONTENT WHEN SIDEBAR IS OPEN ===== */
+.main-content {
+    position: relative;
+    z-index: 1;
+}
+
+body.sidebar-open {
+    overflow: hidden;
+    height: 100%;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 250;
+}
+
+body.sidebar-open .overlay {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+body.sidebar-open .main-content {
+    transform: none !important;
+}
+
+body.sidebar-open .sidebar {
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    /* Thêm bóng cho sidebar khi mở */
+}
