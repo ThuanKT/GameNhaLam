@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Possessor - Tải Game</title>
+
+    <link href="../css/css_game/gdien_mtg_desktop.css" rel="stylesheet">
+    <link href="../css/css_game/gdien_mtg_mobile.css" rel="stylesheet">
+    <script src="../javascrp/game.js"></script>
+    <link href="../../thuan/css/nutquaylai.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="support-topbar">
+            <button class="btn-back" onclick="history.back()">Quay lại</button>
+            <div class="support-tagline">Trang tải game Possessor - nhanh chóng và an toàn .</div>
+        </div>
+
+        <!-- BANNER -->
+        <div class="banner">
+            <div class="slider-container" id="mainSlider">
+                <img src="../image/anh_Possessor/anh_Possessor1.jpg" class="slide active" alt="Slide 1">
+                <img src="../image/anh_Possessor/anh_Possessor2.jpg" class="slide" alt="Slide 2">
+                <img src="../image/anh_Possessor/anh_Possessor3.jpg" class="slide" alt="Slide 3">
+            </div>
+        </div>
+
+        <!-- INFO -->
+        <div class="info">
+
+            <div class="info-left">
+
+                <!-- LOGO TRÊN TITLE -->
+                <div class="game-logo">
+                    <img src="../image/anh_Possessor/Possessor_ava.jpg" alt="Possessor logo">
+                </div>
+
+                <div class="game-badges">
+                    <span>Chính thức</span>
+                    <span>Miễn phí</span>
+                    <span>Windows / Android</span>
+                </div>
+
+                <h2>Possessor</h2><br><br>
+                <p>Một trò chơi hành động hấp dẫn với cốt truyện phong phú và gameplay đa dạng.</p>
+
+            </div>
+
+            <div class="info-right">
+                <div class="download-card">
+                    <p class="download-label">Chi tiết tải game</p>
+                    <div class="download-meta">
+                        <span>Thể loại: Hành động</span>
+                        <span>Đánh giá: 4.5 ★</span>
+                        <span>Dung lượng: 2GB</span>
+                        <span>Phiên bản: 1.0.0</span>
+                        <span>OS: Windows 10+</span>
+                    </div>
+                    <button class="download-btn" onclick="downloadGame()">Tải game</button>
+                    <p class="download-note">Link tải an toàn, đã kiểm tra. Nếu gặp lỗi, thử tải lại từ trang chủ.</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- SCREENSHOT -->
+        <div class="screenshots">
+            <img src="../image/anh_Possessor/anh_Possessor4.jpg" >
+            <img src="../image/anh_Possessor/anh_Possessor5.jpg" >
+            <img src="../image/anh_Possessor/anh_Possessor6.jpg" >
+        </div>
+        <div class="detailed-description">
+            <h3>Giới thiệu chi tiết</h3>
+            <p>
+                Possessor(s) là tựa game hành động phiêu lưu phong cách 2D .
+                Người chơi điều khiển một nhân vật bị liên kết với thực thể siêu nhiên, cùng nhau chiến đấu và khám phá một thế giới đổ nát đầy bí ẩn.
+            </p>
+            <ul>
+                <li>Gameplay hành động nhanh với cơ chế chiến đấu linh hoạt.</li>
+                <li>Cốt truyện u tối xoay quanh sự cộng sinh giữa người và thực thể.</li>
+                <li>Phong cách đồ họa độc đáo, đậm chất nghệ thuật.</li>
+            </ul>
+        </div>
+
+        <div class="comments-section">
+            <h3>Bình luận từ người chơi</h3>
+
+            <div class="comment-form">
+                <textarea id="commentInput" placeholder="Chia sẻ ý kiến của bạn về game..."></textarea>
+                <button class="submit-btn" onclick="addComment()">Gửi bình luận</button>
+            </div>
+
+            <div id="commentsList">
+                <div class="comment-item">
+                    <div class="user-avatar">N</div>
+                    <div class="comment-content">
+                        <strong>Nguyễn Văn A</strong>
+                        <p>Game rất mượt, đồ họa đỉnh cao. Hy vọng có thêm nhiều sự kiện mới!</p>
+                        <small>2 giờ trước</small>
+                    </div>
+                </div>
+                <div class="comment-item">
+                    <div class="user-avatar" style="background: #ff0055;">T</div>
+                    <div class="comment-content">
+                        <strong>Trần Thị B</strong>
+                        <p>Mới chơi thử mà ghiền luôn, game thật đã !</p>
+                        <small>5 giờ trước</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- RELATED -->
+        <div class="related">
+            <h3>Game liên quan</h3>
+            <br><br>
+            <div class="game-list">
+                <div class="game-card">
+                    <a href="../html/They killed your cat.html">
+                        <img src="../image/anh_Theykillyourcat/Theykillyorcat_ava.jpg" alt="They killed your cat">
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="../html/Tiny Tactics.html">
+                        <img src="../image/anh_Tiny Tactics/Tiny Tactics_ava.jpg" alt="Tiny Tactics">
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="../html/Rain World.html">
+                        <img src="../image/anh_Rain World/Rain World_ava.jpg" alt="Rain World">
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="../html/Lost and Found.html">
+                        <img src="../image/anh_Lostandfound/Lostandfound_ava.jpg" alt="Lost and Found">
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="../html/HomuraHime.html">
+                        <img src="../image/anh_Homura Hime/HomuraHime_ava.jpg" alt="Homura Hime">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <p>© 2026 Game Store - Tải Game Miễn Phí. All Rights Reserved.</p>
+            <p>Chúc bạn chơi game vui vẻ!</p>
+        </div>
+
+    </div>
+</body>
+
+</html>
+

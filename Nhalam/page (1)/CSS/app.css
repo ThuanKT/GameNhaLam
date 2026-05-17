@@ -1,0 +1,98 @@
+/* --- 1. RESET & NỀN CHUNG --- */
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Roboto', 'Segoe UI', sans-serif; /* Dùng Roboto cho giống CH Play */
+}
+
+body {
+    /* Đường dẫn ảnh nền: thoát ra khỏi folder css (..) rồi vào folder images */
+    background:
+        linear-gradient(rgba(15, 23, 42, 0.85), rgba(2, 6, 23, 0.9)), /* lớp phủ tối */
+        url('../images/nen_giao_dien.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* --- 2. KHUNG CONTAINER CHUNG (Dùng cho Login/Register) --- */
+#wrapper {
+    background: rgba(0, 0, 0, 0.85); /* Nền tối mờ */
+    width: 400px;
+    padding: 40px 30px;
+    border-radius: 15px;
+    border: 1px solid #2ecc71; /* Viền xanh Neon nhẹ */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+.form-heading {
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* --- 3. Ô NHẬP LIỆU --- */
+.form-group {
+    border-bottom: 1px solid #444;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+}
+
+.form-group i {
+    width: 30px;
+    color: #2ecc71; /* Icon màu xanh Neon */
+    font-size: 18px;
+}
+
+.form-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.form-input::placeholder { color: #888; }
+
+/* --- 4. NÚT BẤM (BUTTON) --- */
+.form-submit {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #2ecc71;
+    background: transparent;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-submit:hover {
+    background: #2ecc71;
+    color: #000;
+}
+
+/* --- 5. LINK PHỤ --- */
+.footer-link {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.footer-link a {
+    color: #c084fc;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-link a:hover { text-decoration: underline; }
