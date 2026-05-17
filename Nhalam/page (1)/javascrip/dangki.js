@@ -31,6 +31,16 @@ function validatePassword(password) {
     return true;
 }
 
+// Hàm kiểm tra tên đăng nhập phải viết liền, không dấu
+function validateUsername(username) {
+    const usernameRegex = /^[A-Za-z0-9]+$/;
+    if (!usernameRegex.test(username)) {
+        alert("Lỗi: Tên đăng nhập phải viết liền và không dấu !");
+        return false;
+    }
+    return true;
+}
+
 // Xử lý form khi submit
 document.addEventListener('DOMContentLoaded', function() {
     const registerForm = document.getElementById('register-form');
@@ -50,6 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!validateNotEmpty(email, "Email")) return false;
             if (!validateNotEmpty(password, "Mật khẩu")) return false;
             if (!validateNotEmpty(confirmPassword, "Xác nhận mật khẩu")) return false;
+            
+            // Kiểm tra tên đăng nhập viết liền không dấu
+            if (!validateUsername(username)) return false;
             
             // Kiểm tra định dạng email
             if (!validateEmail(email)) {
