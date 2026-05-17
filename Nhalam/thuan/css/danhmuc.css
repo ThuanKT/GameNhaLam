@@ -1,0 +1,65 @@
+/* ===== NÚT CATEGORY (DANH MỤC) ===== */
+.category {
+    background: linear-gradient(135deg, #22c55e, #16a34a); 
+    /* Nền gradient xanh lá (chéo 135 độ) */
+
+    padding: 7px 16px; 
+    /* Khoảng cách trong */
+
+    border-radius: 20px; 
+    /* Bo tròn thành nút mềm */
+
+    border: none; 
+    /* Xóa viền mặc định */
+
+    cursor: pointer; 
+    /* Hover hiện bàn tay -> có thể click */
+}
+
+/* ===== KHUNG CHỨA DANH MỤC (DROPDOWN) ===== */
+.category-content {
+    position: absolute; 
+    /* Định vị tự do so với phần tử cha (thường là .right) */
+
+    top: 60px; 
+    /* Cách trên xuống 60px */
+
+    right: 0; 
+    /* Dính sát bên phải */
+
+    background: #fff; 
+    /* Nền trắng */
+
+    border-radius: 10px; 
+    /* Bo góc nhẹ */
+
+    max-height: 0; 
+    /* Ban đầu ẩn (chiều cao = 0) */
+
+    overflow: hidden; 
+    /* Ẩn nội dung bị tràn */
+
+    transition: max-height 0.3s ease;
+    /* Hiệu ứng mở mượt */
+}
+
+/* ===== KHI HIỆN DROPDOWN ===== */
+.category-content.show {
+    max-height: 200px; 
+    /* Mở ra tối đa 200px */
+}
+
+/* ===== LINK TRONG DROPDOWN ===== */
+.category-content a {
+    display: block; 
+    /* Mỗi link chiếm 1 dòng */
+
+    padding: 10px; 
+    /* Khoảng cách click dễ hơn */
+
+    text-decoration: none; 
+    /* Xóa gạch chân */
+
+    color: black; 
+    /* Màu chữ */
+}
