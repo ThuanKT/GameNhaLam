@@ -1,105 +1,93 @@
 // Hàm kiểm tra email hợp lệ
 function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
 }
 
 // Hàm kiểm tra trường bỏ trống
 function validateNotEmpty(value, fieldName) {
-    if (!value.trim()) {
-        alert(`Lỗi: ${fieldName} không được bỏ trống!`);
-        return false;
-    }
-    return true;
+  if (!value || !value.trim()) {
+    alert('Loi: ' + fieldName + ' khong duoc bo trong!');
+    return false;
+  }
+  return true;
 }
 
 // Hàm kiểm tra mật khẩu khớp
 function validatePasswordMatch(password, confirmPassword) {
-    if (password !== confirmPassword) {
-        alert("Lỗi: Mật khẩu nhập lại không khớp!");
-        return false;
-    }
-    return true;
+  if (password !== confirmPassword) {
+    alert('Loi: Mat khau nhap lai khong khop!');
+    return false;
+  }
+  return true;
 }
 
 // Hàm kiểm tra mật khẩu hợp lệ
 function validatePassword(password) {
-    if (password.length < 6) {
-        alert("Lỗi: Mật khẩu phải có ít nhất 6 ký tự!");
-        return false;
-    }
-    return true;
+  if (password.length < 6) {
+    alert('Loi: Mat khau phai co it nhat 6 ky tu!');
+    return false;
+  }
+  return true;
 }
 
 // Hàm kiểm tra tên đăng nhập phải viết liền, không dấu
 function validateUsername(username) {
-    const usernameRegex = /^[A-Za-z0-9]+$/;
-    if (!usernameRegex.test(username)) {
-        alert("Lỗi: Tên đăng nhập phải viết liền và không dấu !");
-        return false;
-    }
-    return true;
+  const usernameRegex = /^[A-Za-z0-9]+$/;
+  if (!usernameRegex.test(username)) {
+    alert('Loi: Ten dang nhap phai viet lien va khong dau!');
+    return false;
+  }
+  return true;
 }
 
 // Xử lý form khi submit
 document.addEventListener('DOMContentLoaded', function() {
-    const registerForm = document.getElementById('register-form');
-    
-    if (registerForm) {
-        registerForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Ngăn form submit mặc định
-            
-            // Lấy giá trị từ các input
-            const username = document.getElementById('reg-user').value;
-            const email = document.getElementById('reg-email').value;
-            const password = document.getElementById('reg-pass').value;
-            const confirmPassword = document.getElementById('re-pass').value;
-            
-            // Kiểm tra các trường bỏ trống
-            if (!validateNotEmpty(username, "Tên đăng nhập")) return false;
-            if (!validateNotEmpty(email, "Email")) return false;
-            if (!validateNotEmpty(password, "Mật khẩu")) return false;
-            if (!validateNotEmpty(confirmPassword, "Xác nhận mật khẩu")) return false;
-            
-            // Kiểm tra tên đăng nhập viết liền không dấu
-            if (!validateUsername(username)) return false;
-            
-            // Kiểm tra định dạng email
-            if (!validateEmail(email)) {
-                alert("Lỗi: Email không hợp lệ!");
-                return false;
-            }
-            
-            // Kiểm tra độ dài mật khẩu
-            if (!validatePassword(password)) return false;
-            
-            // Kiểm tra mật khẩu khớp
-            if (!validatePasswordMatch(password, confirmPassword)) return false;
-            
-            // Nếu tất cả kiểm tra passed
-            // Lưu thông tin tài khoản vào localStorage
-            const accounts = JSON.parse(localStorage.getItem('accounts')) || [];
-            
-            // Kiểm tra xem tên đăng nhập đã tồn tại chưa
-            if (accounts.some(acc => acc.username === username)) {
-                alert("Lỗi: Tên đăng nhập này đã tồn tại!");
-                return false;
-            }
-            
-            // Thêm tài khoản mới
-            accounts.push({
-                username: username,
-                email: email,
-                password: password
-            });
-            
-            // Lưu lại vào localStorage
-            localStorage.setItem('accounts', JSON.stringify(accounts));
-            
-            alert("Đăng ký thành công!");
-            // Sau đó mới cho redirect
-            window.location.href = 'trangdn.html';
-            return false;
-        });
-    }
+  const registerForm = document.getElementById('register-form');
+
+  if (registerForm) {
+    registerForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // Ngăn form submit mặc định
+
+      // Lấy giá trị từ các input
+      const username = document.getElementById('reg-user').value.trim();
+      const email = document.getElementById('reg-email').value.trim();
+      const password = document.getElementById('reg-pass').value;
+      const confirmPassword = document.getElementById('re-pass').value;
+
+      // Kiểm tra các bước logic
+      if (!validateNotEmpty(username, 'Ten dang nhap')) return;
+      if (!validateNotEmpty(email, 'Email')) return;
+      if (!validateNotEmpty(password, 'Mat khau')) return;
+      if (!validateNotEmpty(confirmPassword, 'Xac nhan mat khau')) return;
+
+      if (!validateUsername(username)) return;
+
+      if (!validateEmail(email)) {
+        alert('Loi: Email khong hop le!');
+        return;
+      }
+
+      if (!validatePassword(password)) return;
+      if (!validatePasswordMatch(password, confirmPassword)) return;
+
+      // Kiểm tra localStorage
+      const accounts = JSON.parse(localStorage.getItem('accounts')) || [];
+      if (accounts.some(acc => acc.username === username)) {
+        alert('Loi: Ten dang nhap nay da ton tai!');
+        return;
+      }
+
+      // Lưu tài khoản
+      accounts.push({
+        username: username,
+        email: email,
+        password: password
+      });
+
+      localStorage.setItem('accounts', JSON.stringify(accounts));
+      alert('Dang ky thanh cong!');
+      window.location.href = 'trangdn.html';
+    });
+  }
 });
