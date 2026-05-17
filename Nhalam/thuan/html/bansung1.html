@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Store</title>
+    <link href="../css/giaodien.css" rel="stylesheet">
+      <link href="../css/danhmuc.css" rel="stylesheet">
+    <link href="../css/logo.css" rel="stylesheet">
+    <link href="../css/card.css" rel="stylesheet">
+    <link href="../css/login.css" rel="stylesheet">
+    <link href="../css/pro.css" rel="stylesheet">
+    <link href="../css/menu.css" rel="stylesheet">
+    <link href="../css/searchbox.css" rel="stylesheet">
+    <link href="../css/chat-ai.css" rel="stylesheet">
+        <link href="../css/nutquaylai.css" rel="stylesheet">
+        <link href="../css/avatar.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@900&family=Russo+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar">
+        <a href="../html/index2.html">🏠 Trang chủ</a>
+        <div class="submenu">
+            <a href="javascript:void(0)" class="submenu-btn" onclick="toggleSubmenu(event) ">🔥 Thể loại <span
+                    style="float:right">▾</span></a>
+            <div class="submenu-content" id="genreMenu">
+                <a href="../html/hanhdong1.html">• Hành động</a>
+                <a href="../html/chienthuat1.html">• Chiến thuật</a>
+                <a href="../html/phieuluu1.html">• Phiêu lưu</a>
+                <a href="../html/sangtao1.html">• Sáng tạo</a>
+                <a href="../html/FPS1.html">• FPS</a>
+                <a href="../html/bansung1.html">• Bắn súng</a>
+                <a href="../html/sinhton1.html">• Sinh tồn</a>
+                <a href="../html/duaxe1.html">• Đua xe</a>
+                <a href="../html/nhapvai1.html">• Nhập vai</a>
+            </div>
+        </div>
+        <a href="../../web_tai_game/html/ho_tro1.html">💬 Hỗ trợ</a>
+        <a href="https://www.facebook.com/share/1CqnaHnsBS/">📄 Fanpage</a>
+    </div>
+    <header>
+        <div class="giaodien0">
+            <div class="left">
+                <span class="menu-btn" onclick="toggleMenu(event)">☰</span>
+                <a href="../html/index2.html" class="logo-container ">
+                    <img src="../image/logo_preview_rev_1.png" alt="Game Nhà Làm" class="header-logo">
+                    <div class="logo-text">
+                        <span class="logo-main">GAME</span>
+                        <span class="logo-sub">NHÀ LÀM</span>
+                    </div>
+                </a>
+            </div>
+            <div class="center">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="🔍Tìm trò chơi...">
+                </div>
+            </div>
+            <div class="right">
+                <div class="user-profile" id="userProfile" style="display: inline-block;">
+                    <img src="../image/rân.jpg" alt="Avatar" class="user-avatar">
+                    <div class="user-dropdown">
+                        <a href="kk.html">Trang cá nhân</a>
+                        <a href="index.html" onclick="logout()" style="color: red;">Đăng xuất</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="main-content" id="mainContent">
+
+        <div id="searchResult" class="gamelist"></div>
+        <div class="tieude hide-on-search">DANH SÁCH TRÒ CHƠI BẮN SÚNG</div>
+
+        <div class="game-grid">
+            <div class="game-item">
+                <a href="../../web_tai_game/html/pubgmobile.html" class="game-card card-link">
+                    <div class="card-header">
+                        <img src="../image/pubg.webp" alt="Game Banner">
+
+                    </div>
+
+                    <div class="card-body">
+                        <h2 class="game-title">PUBG</h2>
+                        <p class="release-date">📅 Phát hành: 16/03/2026</p>
+                        <div class="tags">
+                            <span>FPS</span>
+                            <span>Bắn súng</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="metrics">
+                            <span>❤️ 1256</span>
+                            <span>💬 231</span>
+                            <span>👁️ 2035</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="game-item">
+                <a href="../../web_tai_game/html/They killed your cat.html" class="game-card card-link">
+                    <div class="card-header">
+                        <img src="../image/Theykill.jpg" alt="Game Banner">
+
+                    </div>
+
+                    <div class="card-body">
+                        <h2 class="game-title">They Killed Your Cat</h2>
+                        <p class="release-date">📅 Phát hành: 18/03/2026</p>
+                        <div class="tags">
+                            <span>Nhập vai</span>
+                            <span>Bắn súng</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="metrics">
+                            <span>❤️ 61</span>
+                            <span>💬 32</span>
+                            <span>👁️ 412</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="game-item">
+                <a href="../../web_tai_game/html/freefire.html" class="game-card card-link">
+                            <div class="card-header">
+                            <img src="../image/freelua.jpg" alt="Game Banner">
+                            </div>
+
+                    <div class="card-body">
+                        <h2 class="game-title">Free Fire</h2>
+                        <p class="release-date">📅 Phát hành: 16/03/2026</p>
+                        <div class="tags">
+                            <span>Bắn súng</span>
+                            <span>Chiến thuật</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="metrics">
+                            <span>❤️ 561</span>
+                            <span>💬 21</span>
+                            <span>👁️ 1231</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <div class="game-item">
+            <a href="../../web_tai_game/html/Scrap Mechanic.html" class="game-card card-link">
+                <div class="card-header">
+                    <img src="../image/sc.jpg" alt="Game Banner">
+
+                </div>
+
+                <div class="card-body">
+                    <h2 class="game-title">Scrap Mechanic</h2>
+                    <p class="release-date">📅 Phát hành: 01/08/2025</p>
+                    <div class="tags">
+                        <span>Bắn súng</span>
+                        <span>Chiến thuật</span>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="metrics">
+                        <span>❤️ 15</span>
+                        <span>💬 2</span>
+                        <span>👁️ 47</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="game-item">
+            <a href="../../web_tai_game/html/Storage Hunter Simulator.html" class="game-card card-link">
+                <div class="card-header">
+                    <img src="../image/sto.jpg" alt="Game Banner">
+
+                </div>
+
+                <div class="card-body">
+                    <h2 class="game-title">Storage Hunter Simulator</h2>
+                    <p class="release-date">📅 Phát hành: 15/03/2026</p>
+                    <div class="tags">
+                        <span>Nhập vai</span>
+                        <span>Bắn súng</span>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="metrics">
+                        <span>❤️ 411</span>
+                        <span>💬 32</span>
+                        <span>👁️ 596</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+
+
+    <div class="chat-icon" id="chatIcon" onclick="toggleChat()">🤖</div>
+
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            BOX CHAT
+            <button class="close-btn" onclick="toggleChat()">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <p>Chào bạn! Tôi có thể giúp gì cho bạn?</p>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Nhập tin nhắn...">
+            <button onclick="sendMessage()">Gửi</button>
+        </div>
+    </div>
+
+    <script src="../js/menu.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/slider.js"></script>
+    <script src="../js/chat-ai.js"></script>
+</body>
+
+</html>
